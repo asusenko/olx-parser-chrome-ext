@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "OLX Parser Extension",
+    "version": "1.0",
+    "description": "A Chrome extension to parse OLX listings.",
+    "permissions": ["scripting"],
+    "host_permissions": [
+      "https://www.olx.ua/d/uk/obyavlenie/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.olx.ua/d/uk/obyavlenie/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
