@@ -10,8 +10,8 @@
     "content_scripts": [
       {
         "matches": ["https://www.olx.ua/d/uk/obyavlenie/*"],
-        "js": ["content.js"]
+        "js": ["jquery-3.6.4.min.js", "content.js"],
+        "run_at": "document_end"
       }
     ]
   }
-  
