@@ -88,7 +88,7 @@ async function subscribe() {
 
         // Optionally refresh the button text if successful
         if (data.success) {
-            alert('You have successfully subscribed to this price tracking!');
+            alert('Ви успішно підписались!');
             // Optionally update the button to '❌ Видалити'
             $('#parserButton').text('❌ Видалити');
             $('#parserButton').on('click', (e) => {
@@ -127,7 +127,7 @@ async function deleteSubscription() {
 
         // Optionally refresh the button text if successful
         if (data.success) {
-            alert('You have successfully unsubscribed from price tracking!');
+            alert('Ви успішно відписались!');
             // Optionally update the button to '➕ Відстежувати ціну'
             $('#parserButton').text('➕ Відстежувати ціну').off('click').on('click', (e) => {
                 e.preventDefault();
@@ -140,14 +140,13 @@ async function deleteSubscription() {
     }
 }
 
-
 async function addParserButton() 
 {
     const priceContainer = $('div[data-testid="ad-price-container"]');
     if (priceContainer.length < 1 || $('#parserButton').length !== 0) {
         return;
     }
-
+    console.log('Adding parser button');
     const isSubscribed = await checkSubscription();
     
     if (!isSubscribed) {
